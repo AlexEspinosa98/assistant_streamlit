@@ -25,4 +25,5 @@ python-dotenv
 pytz
 SQLAlchemy
 streamlit
-docx
+python-docx
+faiss-cpu
