@@ -25,4 +25,4 @@ python-dotenv
 pytz
 SQLAlchemy
 streamlit
-faiss
+fitz
