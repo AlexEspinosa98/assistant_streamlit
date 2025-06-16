@@ -26,3 +26,4 @@ pytz
 SQLAlchemy
 streamlit
 toml
+faiss
