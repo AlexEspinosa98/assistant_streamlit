@@ -25,5 +25,4 @@ python-dotenv
 pytz
 SQLAlchemy
 streamlit
-toml
 faiss
