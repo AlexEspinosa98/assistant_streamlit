@@ -177,3 +177,5 @@ cython_debug/
 
 # testing
 app/routes/response_models.json
+
+.streamlit/*
