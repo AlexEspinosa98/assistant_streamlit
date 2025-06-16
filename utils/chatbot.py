@@ -84,7 +84,7 @@ def get_response(message_history: list, context: str, step: int, session_id: str
         return {"response": response.response.strip(), "step": 2}
     if rag_chain:
         information_response = rag_chain.run(context)
-    system_prompt = prompt_rag(information_response, )
+    system_prompt = prompt_rag(information_response, context)
     structured_llm = llm.with_structured_output(ResponseModel)
     response = structured_llm.invoke(
         [
