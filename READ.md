@@ -32,12 +32,11 @@
 ├── utils/  
 │   ├── chatbot.py           # Lógica del chatbot y prompts  
 │   ├── db.py                # Conexión y consultas con SQLite  
-│   └── ingestion.py         # Lectura de documentos  
+│   ├── ingestion.py         # Lectura de documentos    
+│   ├── models.py            # modelos de pydantic para la extración
+│   ├── prompts.py           # prompts implementados
+│   └── rag.py               # Recuperacion de informacion
 └── README.md                # Este archivo
 
 ---
-
-## 🛠️ Instalación paso a paso
-
-### 1. Clonar el repositorio
 
