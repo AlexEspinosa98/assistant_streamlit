@@ -4,12 +4,18 @@ import uuid
 from utils.db import init_db, save_message, get_messages, save_message_with_step, get_step
 from utils.rag import build_rag_chain
 from utils.chatbot import get_response
-
+import os
 st.set_page_config(page_title="Asistente Virtual")
 st.title("🛒 Chatbot Supermercado con Gemini + RAG")
 
 # Inicializar la base de datos SQLite
 init_db()
+
+if "GOOGLE_API_KEY" not in st.secrets:
+    os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
+
+if "GEMINI_API_KEY" not in st.secrets:
+    os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
 
 # Cargar RAG una sola vez por sesión
 if "rag_chain" not in st.session_state:
