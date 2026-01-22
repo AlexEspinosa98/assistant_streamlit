@@ -9,7 +9,12 @@
       // "program": "${workspaceFolder}\\.venv\\Scripts\\streamlit.exe", // Windows
       "args": ["run", "${workspaceFolder}/main.py"],
       "console": "integratedTerminal",
-      "justMyCode": false
+      "justMyCode": false,
+      // add env
+      "env": {
+        "GEMINI_API_KEY": "AIzaSyCh1DJvBclnSumrE7-Yy5bQ03kA3JRIOSI",
+        "GOOGLE_API_KEY": "AIzaSyCh1DJvBclnSumrE7-Yy5bQ03kA3JRIOSI"
+      }
     }
   ]
 }

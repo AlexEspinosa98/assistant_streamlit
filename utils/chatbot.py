@@ -7,15 +7,18 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from utils.prompts import prompt_identify, prompt_greeting, prompt_information, prompt_rag
 from utils.db import get_client_by_id, save_client_by_id
 
+
+os.environ["GEMINI_API_KEY"] = "AIzaSyCh1DJvBclnSumrE7-Yy5bQ03kA3JRIOSI"
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.0-flash",
+    model="gemini-1.5-flash",
     temperature=0,
     max_tokens=None,
     timeout=None,
     max_retries=2,
+    client=client,
 )
 
 
@@ -55,7 +58,6 @@ def get_response(message_history: list, context: str, step: int, session_id: str
         )
         # save or update client information in the database
         if not response.is_new and response.identificacion:
-            
             client_data = get_client_by_id(response.identificacion)
             if client_data:
                 message_response = f"¡Hola {client_data['nombre']}! 😊 tu informacion ha sido confirmada, en que puedo ayudarte?"

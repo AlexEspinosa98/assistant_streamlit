@@ -51,7 +51,7 @@ if user_input:
 
     step = get_step(st.session_state.sesion_id)
     with st.spinner("procesando..."):
-        response = get_response(st.session_state.history, user_input, step, st.session_state.sesion_id, st.session_state.rag_chain)
+        response = get_response(st.session_state.history, user_input, step, st.session_state.sesion_id)
 
     # Guardar respuesta del modelo
     st.session_state.history.append({"role": "model", "content": response["response"]})
